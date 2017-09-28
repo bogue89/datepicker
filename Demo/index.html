@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+	<head>
+		<title>Datepicker</title>
+		<meta name="charset" charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta name="description" content="Datepicker"/>
+		<meta name="author" content="bogue89 (Jorge Benavides)"/>
+		<meta name="keywords" content="HTML,CSS,XML,JavaScript,PHP,iOS,Android,Mobile,Website"/>
+		
+		<link href="../dist/datepicker.min.css" rel="stylesheet" media="screen" />
+		<script type="text/javascript" src="../dist/datepicker.min.js"></script>
+		<style>
+			body {
+				font-family: Arial;
+				max-width: 800px;
+				margin: 0 auto;
+			}
+			legend {
+				margin-top: 30px;
+			}
+			input {
+				display: block;
+				padding: 2px 10px;
+			}
+		</style>
+		<script>
+			function main() {
+				var examples,i;
+				
+				examples = document.querySelectorAll('.calendar-example');
+				for(i = 0; i<examples.length; i++) {
+					new JBCalendar(examples[i]);
+				}
+				examples = document.querySelectorAll('.clock-example');
+				for(i = 0; i<examples.length; i++) {
+					new JBClock(examples[i], {
+						events:{
+							timeChanged:function(clk, d){
+								clk.domElement.querySelector('.clock-header th').innerHTML = d.JBFormat("%h:%i %a");	
+							}
+						},
+						seconds:true
+					});
+				}
+				examples = document.querySelectorAll('input.datetime');
+				for(i = 0; i<examples.length; i++) {
+					var datepicker1 = new JBDatePicker(examples[i], {
+						format: '%Y-%m-%d %H:%i:%s',
+						hidden: i > 0,
+					});
+				}
+				examples = document.querySelectorAll('input.date');
+				for(i = 0; i<examples.length; i++) {
+					var datepicker2 = new JBDatePicker(examples[i], {
+						format: '%Y-%m-%d',
+						hidden: i > 0,
+						time: false
+					});
+				}				
+			}
+		</script>
+	</head>
+	<body onload="main();">
+		<div id="content">
+			<div class="container my-3">
+				<div class="row">
+					<div class="col-sm-6">
+						<h3>Date</h3>
+						<div class="form-group">
+							<label>Always present</label>
+							<input class="date" type="text" name="date_0">
+						</div>
+						<div class="form-group">
+							<label>On Focus</label>
+							<input class="date" type="text" name="date_1">
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<h3>Datetime</h3>
+						<div class="form-group">
+							<label>Always present</label>
+							<input class="datetime" type="text" name="date_2">
+						</div>
+						<div class="form-group">
+							<label>On Focus</label>
+							<input class="datetime" type="text" name="date_3">
+						</div>
+					</div>
+				</div>
+				<legend>Or just use individual objects:</legend>
+				<div class="row">
+					<div class="col-md-6">
+						<h2>Calendar</h2>
+						<div class="calendar-example">
+						</div>
+					</div>
+					<div class="col-md-6">
+						<h2>Clock</h2>
+						<div class="clock-example">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

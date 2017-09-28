@@ -1,0 +1,38 @@
+.jb-calendar,
+.jb-clock {
+
+}
+.jb-calendar .day {
+
+}
+.jb-calendar .day:hover {
+	background: transparent;
+	color: rgba(220,40,0, 0.8);
+}
+.jb-calendar .day.today {
+	background: transparent;
+	color: rgba(220,40,0, 0.8);
+}
+.jb-calendar .day.today:hover {
+	background: rgba(220,40,0, 0.8);
+	color: white;
+}
+.jb-calendar .day.selected,
+.jb-calendar .day.selected:hover {
+	background: rgba(220,40,0, 0.8);
+	color: white;
+}
+.jb-calendar .calendar-weekdays,
+.jb-clock .clock-header {
+	color: white;
+	background: rgba(0,0,0,0.3);
+}
+.jb-calendar .week {
+	border: 1px solid rgba(0,0,0,0.4);
+}
+.jb-calendar th,
+.jb-calendar td,
+.jb-clock th,
+.jb-clock td {
+	padding: 0;
+}
