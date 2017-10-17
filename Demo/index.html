@@ -23,6 +23,20 @@
 				display: block;
 				padding: 2px 10px;
 			}
+			.datepicker-container {
+				width: 330px;
+				margin: 0;
+				background: #f1f1f1;
+				box-shadow: 0px 0px 8px rgba(0,0,0,0.3);
+			}
+			.form-group.focus {
+				position: relative;	
+			}
+			.form-group.focus .datepicker-container {
+				position: absolute;
+				top: 50px;
+				left: 0;
+			}
 		</style>
 		<script>
 			function main() {
@@ -71,7 +85,7 @@
 							<label>Always present</label>
 							<input class="date" type="text" name="date_0">
 						</div>
-						<div class="form-group">
+						<div class="form-group focus">
 							<label>On Focus</label>
 							<input class="date" type="text" name="date_1">
 						</div>
@@ -82,7 +96,7 @@
 							<label>Always present</label>
 							<input class="datetime" type="text" name="date_2">
 						</div>
-						<div class="form-group">
+						<div class="form-group focus">
 							<label>On Focus</label>
 							<input class="datetime" type="text" name="date_3">
 						</div>
