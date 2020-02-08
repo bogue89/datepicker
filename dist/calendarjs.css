@@ -1,0 +1,39 @@
+.datepicker-container {
+	display: inline-block;
+	text-align: center;
+	opacity: 0;
+	transition: opacity .2s linear;
+}
+.datepicker-container.focus {
+	opacity: 1;
+}
+.datepicker-container.hidden {
+	display: none;
+	
+}
+.calendar-js {
+	background: white;
+	table-layout: fixed;
+	margin: 0 auto;
+}
+.calendar-js th,
+.calendar-js td {
+	text-align: center;
+	padding: 4px;
+	border-radius: 4px;
+	border: 0;
+}
+.calendar-js button,
+.calendar-js input {
+	display: block;
+	border: 0;
+	text-align: center;	
+	width: 100%;
+}
+.calendar-month-js .day[current].today {
+	font-weight: bold;
+}
+.calendar-month-js .day[current].selected {
+	background: black;
+	color: white;
+}
